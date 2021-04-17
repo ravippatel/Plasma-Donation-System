@@ -52,6 +52,7 @@ public class StatisticsJPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -80,17 +81,21 @@ public class StatisticsJPanel extends javax.swing.JPanel {
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/pie-chart.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/piegif.gif"))); // NOI18N
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.setMaximumSize(new java.awt.Dimension(75, 75));
+        jLabel3.setMinimumSize(new java.awt.Dimension(75, 75));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 170, 70, 70));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 170, 100, 90));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/line-chart.png"))); // NOI18N
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.setMaximumSize(new java.awt.Dimension(80, 80));
+        jLabel4.setMinimumSize(new java.awt.Dimension(80, 80));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -99,7 +104,7 @@ public class StatisticsJPanel extends javax.swing.JPanel {
                 jLabel4MouseEntered(evt);
             }
         });
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 70, 60));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 80, 60));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel6.setText("LINE CHART");
@@ -113,7 +118,7 @@ public class StatisticsJPanel extends javax.swing.JPanel {
         jLabel9.setText("BAR CHART");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 300, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/graph.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bar.gif"))); // NOI18N
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -123,27 +128,11 @@ public class StatisticsJPanel extends javax.swing.JPanel {
                 jLabel5MouseEntered(evt);
             }
         });
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 70, 60));
-    }// </editor-fold>//GEN-END:initComponents
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 90, 90));
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        // TODO add your handling code here:
-        
-        DefaultPieDataset pieDataset = new DefaultPieDataset();
-        pieDataset.setValue("Plasma Donor", new Integer(10));
-        pieDataset.setValue("Plasma Patient(Receiver)", new Integer(20));
-       // pieDataset.setValue("Three", new Integer(30));
-       // pieDataset.setValue("Four", new Integer(40));
-        JFreeChart piechart = ChartFactory.createPieChart("Pie Chart", pieDataset, true, true, true);
-        PiePlot piechrt = (PiePlot)piechart.getPlot();
-        //piechrt.setForegroundAlpha(TOP_ALIGNMENT);
-        ChartFrame chrtframe = new ChartFrame("Pie Chart", piechart);
-        chrtframe.setVisible(true);
-        chrtframe.setSize(1200,850);
-        chrtframe.setBackground(Color.WHITE);
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        chrtframe.setLocation(dim.width/2-this.getSize().width/2, dim.height/2- this.getSize().height/2);
-    }//GEN-LAST:event_jLabel3MouseClicked
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/Images/Stats.gif"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 210, 620, 320));
+    }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
         // TODO add your handling code here:
@@ -189,8 +178,28 @@ public class StatisticsJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel5MouseEntered
 
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+
+        DefaultPieDataset pieDataset = new DefaultPieDataset();
+        pieDataset.setValue("Plasma Donor", new Integer(10));
+        pieDataset.setValue("Plasma Patient(Receiver)", new Integer(20));
+        // pieDataset.setValue("Three", new Integer(30));
+        // pieDataset.setValue("Four", new Integer(40));
+        JFreeChart piechart = ChartFactory.createPieChart("Pie Chart", pieDataset, true, true, true);
+        PiePlot piechrt = (PiePlot)piechart.getPlot();
+        //piechrt.setForegroundAlpha(TOP_ALIGNMENT);
+        ChartFrame chrtframe = new ChartFrame("Pie Chart", piechart);
+        chrtframe.setVisible(true);
+        chrtframe.setSize(1200,850);
+        chrtframe.setBackground(Color.WHITE);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        chrtframe.setLocation(dim.width/2-this.getSize().width/2, dim.height/2- this.getSize().height/2);
+    }//GEN-LAST:event_jLabel3MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
