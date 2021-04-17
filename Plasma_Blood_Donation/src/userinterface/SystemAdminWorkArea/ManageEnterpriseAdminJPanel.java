@@ -143,6 +143,7 @@ private boolean checkUserIdExists(String userName) {
         btnCreateAdmin = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         enterpriseJTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -367,6 +368,9 @@ private boolean checkUserIdExists(String userName) {
         jScrollPane1.setViewportView(enterpriseJTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 800, 280));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/Images/adminmanagement.gif"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 510, 390));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAdminActionPerformed
@@ -480,6 +484,7 @@ private boolean checkUserIdExists(String userName) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateAdmin;
     private javax.swing.JTable enterpriseJTable;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
