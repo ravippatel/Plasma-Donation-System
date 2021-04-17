@@ -82,6 +82,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         txtCountry = new javax.swing.JTextField();
         btnCreateNetwork = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 204, 204));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -210,6 +211,9 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 326, 36));
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 410, 360));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/Images/network.gif"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 90, 530, 320));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreateNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateNetworkActionPerformed
@@ -301,6 +305,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
