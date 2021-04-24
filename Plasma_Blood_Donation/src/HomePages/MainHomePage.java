@@ -4,23 +4,14 @@
  */
 package HomePages;
 
-import Business.EcoSystem;
-import Business.DB4OUtil.DB4OUtil;
-import Business.Enterprise.Enterprise;
-import Business.Network.Network;
-import Business.Organization.Organization;
-import Business.UserAccount.UserAccount;
-import java.awt.CardLayout;
+import Plasma.EcoSystem;
+import Plasma_DB4OUtil.DB4OUtil;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Color;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import userinterface.GovernmentCoordinatorRole.EncourageCuredPatientsJPanel;
-
 /**
  *
- * @author Lingfeng
+ * @author RST
  */
 public class MainHomePage extends javax.swing.JFrame {
 
@@ -50,7 +41,6 @@ public class MainHomePage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDialog1 = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         Employees = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -71,23 +61,11 @@ public class MainHomePage extends javax.swing.JFrame {
         Donor = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -105,7 +83,7 @@ public class MainHomePage extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Employee");
+        jLabel4.setText("Employees");
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/team.png"))); // NOI18N
 
@@ -118,22 +96,22 @@ public class MainHomePage extends javax.swing.JFrame {
                 .addGroup(EmployeesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
                     .addComponent(jLabel4))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         EmployeesLayout.setVerticalGroup(
             EmployeesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EmployeesLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addGap(31, 31, 31))
         );
 
-        jPanel1.add(Employees, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 280, 170, 150));
+        jPanel1.add(Employees, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 350, 170, 150));
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle 3.png"))); // NOI18N
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 270, 190, 160));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 350, 190, 160));
 
         AdminEnterprise.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         AdminEnterprise.setOpaque(false);
@@ -145,7 +123,7 @@ public class MainHomePage extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Enterprise System");
+        jLabel2.setText("Enterprise Admin");
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/office.png"))); // NOI18N
 
@@ -154,29 +132,29 @@ public class MainHomePage extends javax.swing.JFrame {
         AdminEnterpriseLayout.setHorizontalGroup(
             AdminEnterpriseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AdminEnterpriseLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(AdminEnterpriseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminEnterpriseLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminEnterpriseLayout.createSequentialGroup()
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24))))
+                        .addComponent(jLabel13)
+                        .addGap(46, 46, 46))))
         );
         AdminEnterpriseLayout.setVerticalGroup(
             AdminEnterpriseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminEnterpriseLayout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
+                .addContainerGap(25, Short.MAX_VALUE)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addGap(21, 21, 21))
         );
 
-        jPanel1.add(AdminEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 90, 140, 150));
+        jPanel1.add(AdminEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 170, 160, 140));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle 3.png"))); // NOI18N
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 90, 200, 150));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 170, 200, 150));
 
         SysAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         SysAdmin.setOpaque(false);
@@ -188,7 +166,7 @@ public class MainHomePage extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Admin Login");
+        jLabel3.setText("Admin");
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/google.png"))); // NOI18N
 
@@ -197,26 +175,28 @@ public class MainHomePage extends javax.swing.JFrame {
         SysAdminLayout.setHorizontalGroup(
             SysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SysAdminLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(38, 38, 38)
                 .addGroup(SysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                    .addComponent(jLabel15)
+                    .addGroup(SysAdminLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel3)))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         SysAdminLayout.setVerticalGroup(
             SysAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SysAdminLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
 
-        jPanel1.add(SysAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 100, 150, 120));
+        jPanel1.add(SysAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 240, 150, 120));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle 3.png"))); // NOI18N
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 190, 150));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 230, 190, 150));
 
         Receiver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Receiver.setOpaque(false);
@@ -228,7 +208,7 @@ public class MainHomePage extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("The Receiver Page");
+        jLabel6.setText("RECEIVER");
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/receiver.png"))); // NOI18N
 
@@ -241,7 +221,7 @@ public class MainHomePage extends javax.swing.JFrame {
                 .addGroup(ReceiverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         ReceiverLayout.setVerticalGroup(
             ReceiverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,10 +233,10 @@ public class MainHomePage extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
         );
 
-        jPanel1.add(Receiver, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, 180, 150));
+        jPanel1.add(Receiver, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 540, 180, 150));
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle 3.png"))); // NOI18N
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, 190, 150));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 540, 190, 150));
 
         Donor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Donor.setOpaque(false);
@@ -268,7 +248,7 @@ public class MainHomePage extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("The Donor Page");
+        jLabel5.setText("DONOR");
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/donor.png"))); // NOI18N
 
@@ -277,51 +257,51 @@ public class MainHomePage extends javax.swing.JFrame {
         DonorLayout.setHorizontalGroup(
             DonorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DonorLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addGroup(DonorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DonorLayout.createSequentialGroup()
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DonorLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(22, 22, 22))))
+                .addGap(62, 62, 62)
+                .addComponent(jLabel5)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DonorLayout.createSequentialGroup()
+                .addContainerGap(53, Short.MAX_VALUE)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51))
         );
         DonorLayout.setVerticalGroup(
             DonorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DonorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addGap(33, 33, 33))
         );
 
-        jPanel1.add(Donor, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 190, 170, 140));
-
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ezgif-2-947a8d392fb2.gif"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 400, 400, 260));
+        jPanel1.add(Donor, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 460, 170, 150));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Plasma Donation.gif"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 580, 520));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 580, 520));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/leftPanelBack.png"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 600, 630));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 600, 540));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle 3.png"))); // NOI18N
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 190, 190, 150));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 460, 200, 150));
 
-        jLabel7.setBackground(new java.awt.Color(255, 171, 169));
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/rightPanel.png"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, 850, 570));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 60, 790, 690));
 
+        jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(255, 204, 204));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("PLASMA AND BLOOD DONATION SYSTEM");
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, 720, 50));
+        jTextField1.setText("PLASMA DONATION APPLICATION");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 760, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 20, 1350, 790));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -352,6 +332,10 @@ public class MainHomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
         new DonorRecieverFramePage("receiver", system).show();
     }//GEN-LAST:event_ReceiverMousePressed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -394,8 +378,6 @@ public class MainHomePage extends javax.swing.JFrame {
     private javax.swing.JPanel Employees;
     private javax.swing.JPanel Receiver;
     private javax.swing.JPanel SysAdmin;
-    private javax.swing.JDialog jDialog1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;

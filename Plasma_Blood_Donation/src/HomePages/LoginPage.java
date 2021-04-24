@@ -4,13 +4,12 @@
  * and open the template in the editor.
  */
 package HomePages;
-
-import Business.DB4OUtil.DB4OUtil;
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Network.Network;
-import Business.Organization.Organization;
-import Business.UserAccount.UserAccount;
+import Plasma_DB4OUtil.DB4OUtil;
+import Plasma.EcoSystem;
+import Plasma_Association.Association;
+import Plasma_Enterprise.Enterprise;
+import Plasma_Network_Cities.Network_Cities;
+import Plasma_User_Account.User_Acc;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,7 +19,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author adwai
+ * @author RST
  */
 public class LoginPage extends javax.swing.JFrame {
 
@@ -29,20 +28,18 @@ public class LoginPage extends javax.swing.JFrame {
      */
     private EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+
     public LoginPage() {
         system = dB4OUtil.retrieveSystem();
-        System.out.println(system.getWorkQueue().getWorkRequestList().size()+"cz");
+        System.out.println(system.getWorkQueue().getWork_Req_List().size() + "cz");
         initComponents();
-        
-        //to make the panels transparent
-        
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2- this.getSize().height/2);
-        this.setBackground(new Color(0,0,0,0));
-        jPanel4.setBackground(new Color(0,0,0,0));
-    }
 
-    
+        //to make the panels transparent
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+        this.setBackground(new Color(0, 0, 0, 0));
+        jPanel4.setBackground(new Color(0, 0, 0, 0));
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -226,7 +223,7 @@ public class LoginPage extends javax.swing.JFrame {
     private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
         // TODO add your handling code here:
         System.exit(0);
-        
+
     }//GEN-LAST:event_jLabel3MousePressed
 
     private void jLabel11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MousePressed
@@ -235,69 +232,66 @@ public class LoginPage extends javax.swing.JFrame {
         // Get Password
         char[] passwordCharArray = txtPassword.getPassword();
         String password = String.valueOf(passwordCharArray);
-        
+
         //Step1: Check in the system admin user account directory if you have the user
-        UserAccount userAccount=system.getUserAccountDirectory().authenticateUser(userName, password);
-        
-        Enterprise inEnterprise=null;
-        Organization inOrganization=null;
-        Network inNetwork=null;
-        
-        if(userAccount==null){
+        User_Acc  userAccount = system.getUserAccDir().validate_User(userName, password);
+
+        Enterprise inEnterprise = null;
+        Association inOrganization = null;
+        Network_Cities inNetwork = null;
+
+        if (userAccount == null) {
             //Step 2: Go inside each network and check each enterprise
-            for(Network network:system.getNetworkList()){
+            for (Network_Cities network : system.getCityList()) {
                 //Step 2.a: check against each enterprise
-                for(Enterprise enterprise:network.getEnterpriseDirectory().getEnterpriseList()){
-                    userAccount=enterprise.getUserAccountDirectory().authenticateUser(userName, password);
-                    if(userAccount==null){
-                       //Step 3:check against each organization for each enterprise
-                       for(Organization organization:enterprise.getOrganizationDirectory().getOrganizationList()){
-                           userAccount=organization.getUserAccountDirectory().authenticateUser(userName, password);
-                           if(userAccount!=null){
-                               inEnterprise=enterprise;
-                               inOrganization=organization;
-                               inNetwork = network;
-                               break;
-                           }
-                       }
-                        
-                    }
-                    else{
-                       inEnterprise=enterprise;
-                       break;
-                    }
-                    if(inOrganization!=null){
+                for (Enterprise enterprise : network.getEnterprise_Dir().getEnt_List()) {
+                    userAccount = enterprise.getUserAccDir().validate_User(userName, password);
+                    if (userAccount == null) {
+                        //Step 3:check against each organization for each enterprise
+                        for (Association organization : enterprise.getAssociationDirectory().getAssociationList()) {
+                            userAccount = organization.getUserAccDir().validate_User(userName, password);
+                            if (userAccount != null) {
+                                inEnterprise = enterprise;
+                                inOrganization = organization;
+                                inNetwork = network;
+                                break;
+                            }
+                        }
+
+                    } else {
+                        inEnterprise = enterprise;
                         break;
-                    }  
+                    }
+                    if (inOrganization != null) {
+                        break;
+                    }
                 }
-                if(inEnterprise!=null){
+                if (inEnterprise != null) {
                     break;
                 }
             }
         }
-        
-        if(userAccount==null){
-        JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I><font color='red'>Invalid</font> credentials!</I></h2></html>"));
-            
-            
+
+        if (userAccount == null) {
+            JOptionPane.showMessageDialog(null, new JLabel("<html><h2><I><font color='red'>Invalid</font> credentials!</I></h2></html>"));
+
             //JOptionPane.showMessageDialog(null, "Invalid credentials!");
             return;
-        }
-        else{
-            CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        } else {
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             System.out.println(inEnterprise);
             System.out.println(userAccount.getRole());
             System.out.println(system);
-            userProcessContainer.add("workArea",userAccount.getRole().createWorkArea(userProcessContainer, userAccount, inOrganization, inEnterprise, system, inNetwork));
-            
+            userProcessContainer.add("workArea", userAccount.getRole().createWorkArea(userProcessContainer, userAccount, inOrganization, inEnterprise, system, inNetwork));
+
             layout.next(userProcessContainer);
         }
-        
+
         jLabel11.setEnabled(false);
         //logoutJButton.setEnabled(true);
         txtUserName.setEnabled(false);
         txtPassword.setEnabled(false);
-        
+
     }//GEN-LAST:event_jLabel11MousePressed
 
     private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed

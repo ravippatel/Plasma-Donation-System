@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import UI_System_Coordinator.System_Coordinator_WorkArea_JPanel;
 /**
  *
- * @author RSTs
+ * @author RST
  */
 public class System_Coordinator extends Role {
 

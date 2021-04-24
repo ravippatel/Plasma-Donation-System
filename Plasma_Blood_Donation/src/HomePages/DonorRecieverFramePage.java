@@ -4,15 +4,12 @@
  * and open the template in the editor.
  */
 package HomePages;
-
-import Business.EcoSystem;
-import Business.People.DonorRequestDirectory;
+import Plasma.EcoSystem;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import userinterface.CovidCentreCoordinatorRole.NewReceiverJPanel;
-import userinterface.GovernmentCoordinatorRole.NewDonorJPanel;
-
+import UI_COVID_Coordinator.New_Receiver_JPanel;
+import UI_Govt_Coordinator.New_Donor_JPanel;
 
 public class DonorRecieverFramePage extends javax.swing.JFrame {
 
@@ -31,7 +28,7 @@ public class DonorRecieverFramePage extends javax.swing.JFrame {
         if(type.equals("donor")){
             userProcessContainer.remove(this);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-            NewDonorJPanel newdpanel = new NewDonorJPanel(system);
+            New_Donor_JPanel newdpanel = new New_Donor_JPanel(system);
             userProcessContainer.add("workArea", newdpanel);
             
             layout.next(userProcessContainer);
@@ -39,7 +36,7 @@ public class DonorRecieverFramePage extends javax.swing.JFrame {
         else{
             userProcessContainer.remove(this);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-            NewReceiverJPanel newdpanel = new NewReceiverJPanel(system);
+            New_Receiver_JPanel newdpanel = new New_Receiver_JPanel(system);
             userProcessContainer.add("workArea", newdpanel);
             
             layout.next(userProcessContainer);

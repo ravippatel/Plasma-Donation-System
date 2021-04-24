@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author raunak
+ * @author RST
  */
 public class Legal_Officer_Association extends Association{
 

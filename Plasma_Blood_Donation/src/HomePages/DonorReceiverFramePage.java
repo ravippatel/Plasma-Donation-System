@@ -5,62 +5,48 @@
  */
 package HomePages;
 
-import Business.EcoSystem;
-import Business.People.DonorRequestDirectory;
+import Plasma.EcoSystem;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import userinterface.CovidCentreCoordinatorRole.NewReceiverJPanel;
-import userinterface.GovernmentCoordinatorRole.NewDonorJPanel;
+import UI_COVID_Coordinator.New_Receiver_JPanel;
+import UI_Govt_Coordinator.New_Donor_JPanel;
 
 /**
  *
- * @author adwai
+ * @author RST
  */
 public class DonorReceiverFramePage extends javax.swing.JFrame {
 
-    /**
-     * Creates new form DonorReceiverFramePage
-     */
-    
-    
-    
-      
+    //CREATES NEW FORM DONOR RECIEVER
     public DonorReceiverFramePage(String type, EcoSystem system) {
-        
-        
+
         initComponents();
-        //this.donorRequestDirectory = donorRequestDirectory;
-        
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2- this.getSize().height/2);
-        
-        if(type.equals("donor")){
+
+        Dimension D = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(D.width / 2 - this.getSize().width / 2, D.height / 2 - this.getSize().height / 2);
+
+        if (type.equals("donor")) {
             userProcessContainer.remove(this);
-            CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-            NewDonorJPanel newdpanel = new NewDonorJPanel(system);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            New_Donor_JPanel newdpanel = new New_Donor_JPanel(system);
             userProcessContainer.add("workArea", newdpanel);
-            
+
+            layout.next(userProcessContainer);
+        } else {
+            userProcessContainer.remove(this);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            New_Receiver_JPanel newdpanel = new New_Receiver_JPanel(system);
+            userProcessContainer.add("workArea", newdpanel);
+
             layout.next(userProcessContainer);
         }
-        else{
-            userProcessContainer.remove(this);
-            CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-            NewReceiverJPanel newdpanel = new NewReceiverJPanel(system);
-            userProcessContainer.add("workArea", newdpanel);
-            
-            layout.next(userProcessContainer);
-        }
-        
-        
-        
+
     }
 
     private DonorReceiverFramePage() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -111,7 +97,7 @@ public class DonorReceiverFramePage extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        // CREATE AND DISPLAY FORM  
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new DonorReceiverFramePage().setVisible(true);
